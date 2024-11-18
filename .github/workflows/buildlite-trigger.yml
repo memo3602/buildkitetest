@@ -15,7 +15,7 @@ jobs:
 
       - name: Install Buildkite Agent
         run: |
-          curl -L https://buildkite.com/agent.sh | bash
+          curl -L https://raw.githubusercontent.com/buildkite/agent/main/install.sh | sudo bash
           sudo apt-get install -y buildkite-agent
 
       - name: Trigger Buildkite Pipeline
