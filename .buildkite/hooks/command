@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "Custom command from hook running...Memo testing"
