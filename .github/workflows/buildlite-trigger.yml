@@ -13,14 +13,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Install Buildkite Agent
+        run: |
+          curl -L https://buildkite.com/agent.sh | bash
+          sudo apt-get install -y buildkite-agent
+
       - name: Trigger Buildkite Pipeline
         env:
           BUILDKITE_AGENT_TOKEN: ${{ secrets.BUILDKITE_AGENT_TOKEN }}
         run: |
-          # Install Buildkite Agent
-          curl -L https://buildkite.com/agent.sh | bash
-          sudo apt-get install -y buildkite-agent
-
-          # Upload Buildkite pipeline
+          echo "Uploading Buildkite Pipeline"
           buildkite-agent pipeline upload .buildkite/pipeline.yml
 
