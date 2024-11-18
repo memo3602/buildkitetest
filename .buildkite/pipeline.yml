@@ -1,0 +1,7 @@
+steps:
+  - label: ":hammer: Build and Test"
+    commands:
+      - "echo 'Running Build'"
+      - "echo 'Running Tests'"
+    agents:
+      queue: "memotest" # Optional: Match the agent's tag
