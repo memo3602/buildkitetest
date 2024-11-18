@@ -1,0 +1,26 @@
+name: Trigger Buildkite Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-buildkite:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Trigger Buildkite Pipeline
+        env:
+          BUILDKITE_AGENT_TOKEN: ${{ secrets.BUILDKITE_AGENT_TOKEN }}
+        run: |
+          # Install Buildkite Agent
+          curl -L https://buildkite.com/agent.sh | bash
+          sudo apt-get install -y buildkite-agent
+
+          # Upload Buildkite pipeline
+          buildkite-agent pipeline upload .buildkite/pipeline.yml
+
