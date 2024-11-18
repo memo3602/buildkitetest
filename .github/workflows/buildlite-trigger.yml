@@ -15,11 +15,7 @@ jobs:
 
       - name: Install Buildkite Agent
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gnupg
-          curl -sL https://apt.buildkite.com/buildkite-agent-stable.gpg | sudo apt-key add -
-          echo "deb https://apt.buildkite.com/stable/ stable main" | sudo tee /etc/apt/sources.list.d/buildkite-agent.list
-          sudo apt-get update
+          curl -L https://raw.githubusercontent.com/buildkite/agent/main/install.sh | sudo bash
           sudo apt-get install -y buildkite-agent
 
       - name: Trigger Buildkite Pipeline
