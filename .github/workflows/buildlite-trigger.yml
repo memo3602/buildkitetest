@@ -24,5 +24,6 @@ jobs:
           BUILDKITE_AGENT_TOKEN: ${{ secrets.BUILDKITE_AGENT_TOKEN }}
         run: |
           echo "Uploading Buildkite Pipeline"
-          export BUILDKITE_JOB_ID=${{ secrets.BUILDKITE_JOB_ID }} buildkite-agent pipeline upload .buildkite/pipeline.yml
+          export BUILDKITE_JOB_ID=${{ secrets.BUILDKITE_JOB_ID }} 
+          buildkite-agent pipeline upload .buildkite/pipeline.yml
 
