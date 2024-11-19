@@ -1,5 +1,1 @@
 # buildkitetest
-
-
-
-test
