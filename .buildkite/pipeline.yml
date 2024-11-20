@@ -4,4 +4,4 @@ steps:
   - label: "::one-does-not-simply: Running a 2nd command"
     command: "echo 'Hola soy el 2do comando'"
   - label: "::ruby: checking git branch"
-    command: "cd /Users/memo/repos/placeit && git branch"
+    command: "cd /Users/memo/repos/placeit && git checkout capistrano"
