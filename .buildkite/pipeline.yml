@@ -1,3 +1,5 @@
 steps:
   - label: ":hammer: Build and Test"
     command: "echo 'Running Buildkite Step Memo desde el repo'"
+  - label: "::one-does-not-simply: Running a 2nd command"
+    command: "echo 'Hola soy el 2do comando'"
