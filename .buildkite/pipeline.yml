@@ -3,3 +3,7 @@ steps:
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "::one-does-not-simply: Running a 2nd command"
     command: "echo 'Hola soy el 2do comando'"
+  - label: "::ruby: Instaling Capistrarno dependencies"
+    command: "bungle install"
+  - label: "::capistrano: Deploying Staging"
+    command: "bundle exec cap staging1 deploy"
