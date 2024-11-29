@@ -1,7 +1,5 @@
 steps:
   - label: ":hammer: Build and Test"
     command: "echo 'Running Buildkite Step Memo desde el repo'"
-  - label: "::one-does-not-simply: Switching to deploy user"
-    command: "su - deploy"
   - label: "::ruby: checking git branch"
     command: "cd /home/deploy/placeit && git checkout capistrano && ls -l"
