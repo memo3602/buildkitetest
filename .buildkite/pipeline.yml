@@ -2,6 +2,6 @@ steps:
   - label: ":hammer: Build and Test"
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "checking requirements"
-    command: "whoami && ruby -v"
+    command: "rbenv versions && whoami && ruby -v"
 #  - label: "::ruby: checking git branch"
 #    command: "cd /home/deploy/placeit && git checkout capistrano && bundle exec cap staging1 deploy"
