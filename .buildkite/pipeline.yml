@@ -3,5 +3,5 @@ steps:
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "checking requirements"
     command: "source ~/.zshrc && rbenv versions && whoami && ruby -v"
-#  - label: "::ruby: checking git branch"
-#    command: "cd /home/deploy/placeit && git checkout capistrano && bundle exec cap staging1 deploy"
+  - label: "::ruby: checking git branch"
+    command: "cd /home/deploy/placeit && git checkout capistrano && bundle exec cap staging1 deploy"
