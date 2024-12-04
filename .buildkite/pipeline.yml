@@ -2,4 +2,4 @@ steps:
   - label: ":hammer: Build and Test"
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "checking requirements"
-    command: "source ~/.zshrc && rbenv versions && whoami && ruby -v && cd /home/deploy/placeit && git checkout capistrano && bundle exec cap private-staging deploy"
+    command: "source ~/.zshrc && rbenv versions && whoami && ruby -v && cd /home/deploy/placeit && git checkout capistrano && bundle exec cap staging1-private deploy"
