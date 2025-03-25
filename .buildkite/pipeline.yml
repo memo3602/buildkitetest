@@ -9,7 +9,9 @@ steps:
     command: "sleep 10"
   - wait
   - label: "sleeping"
-    key: 2
+    key: 3
+    depends_on:
+      - 2
     command: "sleep 15"
   - label: "after sleep"
     command: "echo 'Im up'"
