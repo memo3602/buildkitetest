@@ -9,8 +9,6 @@ steps:
 
   - label: "another sleep"
     command: "sleep 10"
-    depends_on:
-      - "waiting"
   - wait:
       key: "waiting"
 
@@ -22,3 +20,5 @@ steps:
 
   - label: "after sleep"
     command: "echo 'Im up'"
+    depends_on:
+      - "waiting"
