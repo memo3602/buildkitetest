@@ -1,7 +1,14 @@
 steps:
   - label: ":hammer: Build and Test"
+    key: 1
     command: "echo 'Running Buildkite Step Memo desde el repo'"
+  - label: "Ill run after sleep"
+    key: 2
+    command: "echo 'I ran after sleep'"
+    depends_on:
+      - 3
   - label: "sleeping"
+    key: 3
     command: "sleep 15"
   - label: "after sleep"
     command: "echo 'Im up'"
