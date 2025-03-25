@@ -7,7 +7,10 @@ steps:
     command: "echo 'I ran after sleep and sleep again 5 sec' && sleep 5"
   - label: "another sleep"
     command: "sleep 10"
+    depends_on:
+      - "waiting"
   - wait
+    key: "waiting"
   - label: "sleeping"
     key: 3
     depends_on:
