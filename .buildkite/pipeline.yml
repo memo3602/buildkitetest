@@ -4,7 +4,7 @@ steps:
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "Ill run after sleep"
     key: 2
-    command: "echo 'I ran after sleep'"
+    command: "echo 'I ran after sleep and sleep again 5 sec' && sleep 5"
     depends_on:
       - 3
   - label: "sleeping"
