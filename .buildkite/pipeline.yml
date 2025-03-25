@@ -14,8 +14,6 @@ steps:
 
   - label: "sleeping"
     key: 3
-    depends_on:
-      - 2
     command: "sleep 8"
 
   - label: "after sleep"
