@@ -2,6 +2,6 @@ steps:
   - label: ":hammer: Build and Test"
     command: "echo 'Running Buildkite Step Memo desde el repo'"
   - label: "sleeping"
-    command: "for i in {1..10}; do sleep 1 && echo 'Sleeping by $i'; done"
+    command: "sleep 15"
   - label: "after sleep"
     command: "echo 'Im up'"
