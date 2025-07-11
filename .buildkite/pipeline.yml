@@ -1,3 +1,6 @@
+env:
+  ENABLE_PUSH_ANNOTATIONS: "true"
+
 steps:
   - label: ":hammer: Build and Test"
     key: 1
