@@ -1,3 +1,6 @@
+env:
+  ENABLE_PUSH_ANNOTATIONS: "true"
+
 steps:
   - label: ":gear: Compile"
     command: "echo 'hablo del otro pipeline'"
