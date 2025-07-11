@@ -18,5 +18,5 @@ steps:
   - label: "doing nothing"
     command: "echo 'doing nothing'"
 
-  - label: ":package: Load Other Pipeline"
-    command: "buildkite-agent pipeline upload .buildkite/sub-pipeline.yml"
+#  - label: ":package: Load Other Pipeline"
+#    command: "buildkite-agent pipeline upload .buildkite/sub-pipeline.yml"
