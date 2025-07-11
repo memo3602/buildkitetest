@@ -1,0 +1,3 @@
+steps:
+  - label: ":gear: Compile"
+    command: "echo 'hablo del otro pipeline'"
