@@ -4,7 +4,7 @@ set -eu
 
 echo "
 env:
-  ENABLE_PUSH_ANNOTATIONS: true
+  ENABLE_PUSH_ANNOTATIONS: "true"
 steps:
   - label: Setting ENABLE_PUSH_ANNOTATIONS environment variable
     command: echo ELEMENTS_BACKEND_DISABLE_STAGING_DEPLOYS variable has been set to $ENABLE_PUSH_ANNOTATIONS
