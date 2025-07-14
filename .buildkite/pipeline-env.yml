@@ -1,11 +1,3 @@
-#!/usr/bin/env bash
-
-set -eu
-
-echo "
-env:
-  ENABLE_PUSH_ANNOTATIONS: "true"
 steps:
-  - label: Setting ENABLE_PUSH_ANNOTATIONS environment variable
-    command: echo ENABLE_PUSH_ANNOTATIONS variable has been set to $ENABLE_PUSH_ANNOTATIONS
-"
+  - label: ":buildkite: set ELEMENTS_BACKEND_DISABLE_STAGING_DEPLOYS env variable"
+    command: ENABLE_PUSH_ANNOTATIONS=true
