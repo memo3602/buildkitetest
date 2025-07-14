@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+
+echo "
+env:
+  ENABLE_PUSH_ANNOTATIONS: $ENABLE_PUSH_ANNOTATIONS
+steps:
+  - label: Setting ENABLE_PUSH_ANNOTATIONS environment variable
+    command: echo ENABLE_PUSH_ANNOTATIONS variable has been set to $ENABLE_PUSH_ANNOTATIONS
+"
