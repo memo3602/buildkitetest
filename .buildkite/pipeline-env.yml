@@ -1,3 +1,3 @@
 steps:
   - label: ":buildkite: set ENABLE_PUSH_ANNOTATIONS env variable"
-    command: ENABLE_PUSH_ANNOTATIONS=false && ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
+    command: ENABLE_PUSH_ANNOTATIONS="memo" && ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
