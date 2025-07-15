@@ -4,6 +4,7 @@ steps:
       - |
         ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
         echo $ENABLE_PUSH_ANNOTATIONS
+        env | grep ENABLE_PUSH_ANNOTATIONS
     plugins:
       - seek-oss/ssm#v0.1.0:
           assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
