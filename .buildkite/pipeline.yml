@@ -15,5 +15,9 @@ steps:
   - label: "doing nothing"
     command: "echo 'doing nothing'"
 
+  - label: "Deploy"
+    key: "push-annotation"
+    command: "sleep 20"
+
 #  - label: ":package: Load Other Pipeline"
 #    command: "buildkite-agent pipeline upload .buildkite/sub-pipeline.yml"
