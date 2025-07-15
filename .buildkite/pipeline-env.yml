@@ -9,7 +9,9 @@ steps:
       echo "SSM-injected value: $$ENABLE_PUSH_ANNOTATIONS"
       echo "ENABLE_PUSH_ANNOTATIONS = $$ENABLE_PUSH_ANNOTATIONS"
       env | grep ENABLE_PUSH_ANNOTATIONS
+      buildkite-agent meta-data set "enable_push_annotations" "$$ENABLE_PUSH_ANNOTATIONS"
 #      ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
 #      - |
 #        echo $ENABLE_PUSH_ANNOTATIONS
 #        env | grep ENABLE_PUSH_ANNOTATIONS
+
