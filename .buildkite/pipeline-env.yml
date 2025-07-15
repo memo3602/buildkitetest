@@ -6,11 +6,9 @@ steps:
           ssmkey: "TESTING_VAR"
           envvar: "ENABLE_PUSH_ANNOTATIONS"
     command: 
-      -  |
-         echo "SSM-injected value: $ENABLE_PUSH_ANNOTATIONS"
-         echo "ENABLE_PUSH_ANNOTATIONS = $ENABLE_PUSH_ANNOTATIONS"
-         echo "TESTING_VAR = $TESTING_VAR"
-         env | grep -E "(ENABLE_PUSH_ANNOTATIONS|TESTING_VAR)"
+      - echo "SSM-injected value: $$ENABLE_PUSH_ANNOTATIONS"
+      - echo "ENABLE_PUSH_ANNOTATIONS = $$ENABLE_PUSH_ANNOTATIONS"
+      - env | grep ENABLE_PUSH_ANNOTATIONS
 #      ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
 #      - |
 #        echo $ENABLE_PUSH_ANNOTATIONS
