@@ -3,8 +3,7 @@ steps:
     plugins:
       - seek-oss/ssm#v0.1.0:
           assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
-          ssm: 
-            ENABLE_PUSH_ANNOTATIONS: "TESTING_VAR"
+          ssmkey: "TESTING_VAR"
     command: |
       echo "SSM value for VAR_ANNOTATIONS is: $ENABLE_PUSH_ANNOTATIONS"
       buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "$ENABLE_PUSH_ANNOTATIONS"
