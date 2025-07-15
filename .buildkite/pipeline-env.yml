@@ -5,7 +5,7 @@ steps:
           assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
           ssmkey: "TESTING_VAR"
           envvar: "ENABLE_PUSH_ANNOTATIONS"
-    command: 
+    commands:
       - echo "SSM-injected value: $$ENABLE_PUSH_ANNOTATIONS"
       - echo "ENABLE_PUSH_ANNOTATIONS = $$ENABLE_PUSH_ANNOTATIONS"
       - env | grep ENABLE_PUSH_ANNOTATIONS
