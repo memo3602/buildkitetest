@@ -1,0 +1,11 @@
+steps:
+  - label: "Fetch annotation flag from SSM (Alternative)"
+    plugins:
+      - aws-ssm#v1.1.0:
+          parameters:
+            ENABLE_PUSH_ANNOTATIONS: "TESTING_VAR"
+    command: 
+      -  |
+         echo "SSM-injected value: $ENABLE_PUSH_ANNOTATIONS"
+         echo "ENABLE_PUSH_ANNOTATIONS = $ENABLE_PUSH_ANNOTATIONS"
+         env | grep ENABLE_PUSH_ANNOTATIONS 
