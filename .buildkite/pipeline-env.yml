@@ -1,13 +1,13 @@
 steps:
-  - label: "Set annotation flag"
-    key: set-annotation-flag
-    command: |
-      echo "About to set ENABLE_PUSH_ANNOTATIONS to: memo"
-      buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "memo"
-      buildkite-agent meta-data get ENABLE_PUSH_ANNOTATIONS
+  - label: "Fetch annotation flag from SSM"
+    command: ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
+    plugins:
+      - seek-oss/ssm#v0.1.0:
+          assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
+          ssmkey: "TESTING_VAR"
+          envvar: "ENABLE_PUSH_ANNOTATIONS"
 
   - label: "Read annotation flag"
     depends_on: set-annotation-flag
     command: |
-      VALUE=$(buildkite-agent meta-data get ENABLE_PUSH_ANNOTATIONS)
-      echo "Annotation flag is $VALUE"
+      echo "Annotation flag is $ENABLE_PUSH_ANNOTATIONS"
