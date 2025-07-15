@@ -1,11 +1,7 @@
 steps:
   - label: "Fetch annotation flag from SSM"
-    plugins:
-      - seek-oss/ssm#v0.1.0:
-          assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
-          ssmkey: "TESTING_VAR"
-          envvar: "ENABLE_PUSH_ANNOTATIONS"
     command: |
+      ENABLE_PUSH_ANNOTATIONS=memo
       echo "SSM value for VAR_ANNOTATIONS is: $ENABLE_PUSH_ANNOTATIONS"
       buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "$ENABLE_PUSH_ANNOTATIONS"
 
