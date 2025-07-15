@@ -1,12 +1,12 @@
 steps:
   - label: "Fetch annotation flag from SSM"
-    command: 
-      - |
-        echo $ENABLE_PUSH_ANNOTATIONS
-        env | grep ENABLE_PUSH_ANNOTATIONS
-        ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
     plugins:
       - seek-oss/ssm#v0.1.0:
           assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
           ssmkey: "TESTING_VAR"
           envvar: "ENABLE_PUSH_ANNOTATIONS"
+    command: 
+      - |
+        echo $ENABLE_PUSH_ANNOTATIONS
+        env | grep ENABLE_PUSH_ANNOTATIONS
+        ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
