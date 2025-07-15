@@ -2,7 +2,7 @@ steps:
   - label: "Fetch annotation flag from SSM"
     plugins:
       - seek-oss/ssm#v0.1.0:
-          assume-role-arn: "arn:aws:iam::311220801150:role/AWSReservedSSO_PlaceitAdministrator_83d7b7ee0a82fc5a"
+          assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
           ssmkey: "TESTING_VAR"
     command: |
       echo "SSM value for VAR_ANNOTATIONS is: $TESTING_VAR"
