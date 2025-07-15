@@ -6,6 +6,6 @@ steps:
           ssm: 
             ENABLE_PUSH_ANNOTATIONS: "TESTING_VAR"
     command: |
-      echo "SSM value for VAR_ANNOTATIONS is: $TESTING_VAR"
-      buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "$TESTING_VAR"
+      echo "SSM value for VAR_ANNOTATIONS is: $ENABLE_PUSH_ANNOTATIONS"
+      buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "$ENABLE_PUSH_ANNOTATIONS"
 
