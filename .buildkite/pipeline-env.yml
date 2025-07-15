@@ -1,10 +1,11 @@
 steps:
   - label: "Set annotation flag"
+    key: set-annotation-flag
     command: |
       buildkite-agent meta-data set ENABLE_PUSH_ANNOTATIONS "memo"
 
   - label: "Read annotation flag"
-    depends_on: "Set annotation flag"
+    depends_on: set-annotation-flag
     command: |
       VALUE=$(buildkite-agent meta-data get ENABLE_PUSH_ANNOTATIONS)
       echo "Annotation flag is $VALUE"
