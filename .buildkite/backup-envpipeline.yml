@@ -10,6 +10,16 @@ steps:
       echo "ENABLE_PUSH_ANNOTATIONS = $$ENABLE_PUSH_ANNOTATIONS"
       env | grep ENABLE_PUSH_ANNOTATIONS
       buildkite-agent meta-data set "enable_push_annotations" "$$ENABLE_PUSH_ANNOTATIONS"
+
+  - label: "Fetch allowed repositories from SSM"
+    plugins:
+      - seek-oss/ssm#v0.2.0:
+          assume-role-arn: "arn:aws:iam::311220801150:role/testingmemossm"
+          ssmkey: "ALLOWED_REPOS"
+          envvar: "ALLOWED_REPOS"
+    command: |
+      echo "Allowed repositories loaded from SSM"
+      buildkite-agent meta-data set "allowed_repos" "$$ALLOWED_REPOS"
 #      ./script/buildkite/test-variable.sh | buildkite-agent pipeline upload
 #      - |
 #        echo $ENABLE_PUSH_ANNOTATIONS
