@@ -3,21 +3,21 @@ steps:
     key: 1
     command: "echo 'Running Buildkite Step Memo desde el repo'"
 
-  - label: "echo 'holding next step'"
-    key: "waiting"
-    command: "sleep 5"
-
-  - label: "after sleep"
-    command: "echo 'Im up'"
-    depends_on:
-      - "waiting"
-
-  - label: "doing nothing"
-    command: "echo 'doing nothing'"
+#  - label: "echo 'holding next step'"
+#    key: "waiting"
+#    command: "sleep 5"
+#
+#  - label: "after sleep"
+#    command: "echo 'Im up'"
+#    depends_on:
+#      - "waiting"
+#
+#  - label: "doing nothing"
+#    command: "echo 'doing nothing'"
 
   - label: "Deploy"
     key: "deploy"
-    command: "sleep 10"
+    command: "sleep 5"
 
 #  - label: ":package: Load Other Pipeline"
 #    command: "buildkite-agent pipeline upload .buildkite/sub-pipeline.yml"
